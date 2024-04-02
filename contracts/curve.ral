@@ -1,0 +1,115 @@
+struct Point {
+  mut x: U256,
+  mut y: U256
+}
+
+Contract BN128Curve() {
+  const P = 21888242871839275222246405745257275088696311157297823662689037894645226208583
+
+  enum Error {
+    Infinity = 0
+  }
+
+  pub fn add(p1: Point, p2: Point) -> Point {
+    // result would be inf
+    assert!(p1.x != p2.x, Error.Infinity)
+
+    if (isEqual(p1, p2)) {
+      return double(p1)
+    }
+
+    let inf = infPoint()
+
+    if (isEqual(p1, inf)) {
+      return p2
+    }
+
+    if (isEqual(p2, inf)) {
+      return p1
+    }
+
+    let deltaY = addModN!(p2.y, P - p1.y, P)
+    let deltaX = addModN!(p2.x, P - p1.x, P)
+    let invDeltaX = fieldInv(deltaX, P)
+
+    let m = mulModN!(deltaY, invDeltaX, P)
+    let newx = addModN!(addModN!(mulModN!(m, m, P), P - p1.x, P), P - p2.x, P)
+    let newy = addModN!(mulModN!(m, addModN!(p1.x, P - newx, P), P), P - p1.y, P)
+    
+    return Point { x: newx, y: newy }
+  }
+
+  pub fn double(pt: Point) -> Point {
+    if (isEqual(pt, infPoint())) {
+      return pt
+    }
+
+    let mut m = mulModN!(3, mulModN!(pt.x, pt.x, P), P)
+    m = mulModN!(m, fieldInv(mulModN!(2, pt.y, P), P), P)
+    let newx = addModN!(mulModN!(m, m, P) + (P - mulModN!(2, pt.x, P)), 0, P)
+    let newy = addModN!(mulModN!(m, addModN!(pt.x, P - newx, P), P), P - pt.y, P)
+
+    return Point { x: newx, y: newy }
+  }
+
+  pub fn multiply(pt: Point, mut n: U256) -> Point {
+    if (n == 0) {
+      return infPoint()
+    }
+
+    if (n == 1) {
+      return pt
+    }
+
+    let mut result = infPoint()
+    let mut addend = pt
+
+    while (n > 0) {
+      if (n & 1 != 0) {
+        result = add(result, addend)
+      }
+
+      addend = double(addend)
+      n = n >> 1
+    }
+
+    return result
+  }
+
+  fn isEqual(a: Point, b: Point) -> Bool {
+    return a.x == b.x && a.y == b.y
+  }
+
+  fn infPoint() -> Point {
+    return Point { x: 0, y: 0 }
+  }
+
+  // Extended euclidean algorithm to find modular inverses for integers
+  fn fieldInv(mut a: U256, mod: U256) -> U256 {
+    if (a > mod) {
+      a = a % mod
+    }
+
+    let mut t = 0i
+    let mut newT = 1i
+    let mut r = mod
+    let mut newR = a
+    while (newR != 0) {
+      let q = r / newR
+
+      let currNewT = newT
+      newT = t - toI256!(q) * newT
+      t = currNewT
+
+      let currNewR = newR
+      newR = r - q * newR
+      r = currNewR
+    }
+
+    if (t < 0i) {
+      return toU256!(t + toI256!(mod))
+    }
+
+    return toU256!(t)
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "fullNodeVersion": "v2.11.0",
+  "compilerOptionsUsed": {
+    "ignoreUnusedConstantsWarnings": false,
+    "ignoreUnusedVariablesWarnings": false,
+    "ignoreUnusedFieldsWarnings": false,
+    "ignoreUnusedPrivateFunctionsWarnings": false,
+    "ignoreUpdateFieldsCheckWarnings": false,
+    "ignoreCheckExternalCallerWarnings": false
+  },
+  "infos": {
+    "BN128Curve": {
+      "sourceFile": "curve.ral",
+      "sourceCodeHash": "81bfae1da226b0b8f4bcd9fd761f6dfc706fbfbef220f97a8fde8329b43a87bb",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "7d67caed6c7e1f5660c3a9ab726ed902716e6fd34623fc0fbc728739cb3dc755",
+      "warnings": []
+    },
+    "Point": {
+      "sourceFile": "curve.ral",
+      "sourceCodeHash": "81bfae1da226b0b8f4bcd9fd761f6dfc706fbfbef220f97a8fde8329b43a87bb",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "",
+      "warnings": []
+    }
+  }
+}

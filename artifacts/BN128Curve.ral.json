@@ -1,0 +1,151 @@
+{
+  "version": "v2.11.0",
+  "name": "BN128Curve",
+  "bytecode": "000642a944d2452e4540454945b20100040c02405c16001602300c7b160016011602160300034c0416001601000102000417051704160016011604160500034c031602160302160216031604160500034c031600160102160313dc30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd4716012b13dc30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd47881706160213dc30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd4716002b13dc30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd47881707160713dc30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd47000517081606160813dc30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd478717091609160913dc30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd478713dc30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd4716002b13dc30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd478813dc30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd4716022b13dc30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd4788170a1609160013dc30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd47160a2b13dc30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd478813dc30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd478713dc30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd4716012b13dc30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd4788170b160a160b020100020502403b16001601000400034c0316001601020f1600160013dc30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd478713dc30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd4787170216020e160113dc30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd478713dc30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd47000513dc30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd478717021602160213dc30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd478713dc30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd470e160013dc30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd47872b2a0c13dc30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd478817031602160013dc30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd4716032b13dc30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd478813dc30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd478713dc30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd4716012b13dc30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd4788170416031604020100030702403216020c2f4c0200040216020d2f4c031600160102000417041703160016011706170516020c334c1716020d380c304c0716031604160516060000170417031605160600011706170516020d3c17024a251603160402000004040108160016022f160116032f1a020000000002030c0c020000020901403b16001601334c04160016012e1700051702061703160117041600170516050c304c1a160416052d170616031707160216063f16032120170316071702160517081604160616052c2b1705160817044a22160205264c06160216013f1f3d0216023d02",
+  "codeHash": "7d67caed6c7e1f5660c3a9ab726ed902716e6fd34623fc0fbc728739cb3dc755",
+  "fieldsSig": {
+    "names": [],
+    "types": [],
+    "isMutable": []
+  },
+  "eventsSig": [],
+  "functions": [
+    {
+      "name": "add",
+      "usePreapprovedAssets": false,
+      "useAssetsInContract": false,
+      "isPublic": true,
+      "paramNames": [
+        "p1",
+        "p2"
+      ],
+      "paramTypes": [
+        "Point",
+        "Point"
+      ],
+      "paramIsMutable": [
+        false,
+        false
+      ],
+      "returnTypes": [
+        "Point"
+      ]
+    },
+    {
+      "name": "double",
+      "usePreapprovedAssets": false,
+      "useAssetsInContract": false,
+      "isPublic": true,
+      "paramNames": [
+        "pt"
+      ],
+      "paramTypes": [
+        "Point"
+      ],
+      "paramIsMutable": [
+        false
+      ],
+      "returnTypes": [
+        "Point"
+      ]
+    },
+    {
+      "name": "multiply",
+      "usePreapprovedAssets": false,
+      "useAssetsInContract": false,
+      "isPublic": true,
+      "paramNames": [
+        "pt",
+        "n"
+      ],
+      "paramTypes": [
+        "Point",
+        "U256"
+      ],
+      "paramIsMutable": [
+        false,
+        true
+      ],
+      "returnTypes": [
+        "Point"
+      ]
+    },
+    {
+      "name": "isEqual",
+      "usePreapprovedAssets": false,
+      "useAssetsInContract": false,
+      "isPublic": false,
+      "paramNames": [
+        "a",
+        "b"
+      ],
+      "paramTypes": [
+        "Point",
+        "Point"
+      ],
+      "paramIsMutable": [
+        false,
+        false
+      ],
+      "returnTypes": [
+        "Bool"
+      ]
+    },
+    {
+      "name": "infPoint",
+      "usePreapprovedAssets": false,
+      "useAssetsInContract": false,
+      "isPublic": false,
+      "paramNames": [],
+      "paramTypes": [],
+      "paramIsMutable": [],
+      "returnTypes": [
+        "Point"
+      ]
+    },
+    {
+      "name": "fieldInv",
+      "usePreapprovedAssets": false,
+      "useAssetsInContract": false,
+      "isPublic": false,
+      "paramNames": [
+        "a",
+        "mod"
+      ],
+      "paramTypes": [
+        "U256",
+        "U256"
+      ],
+      "paramIsMutable": [
+        true,
+        false
+      ],
+      "returnTypes": [
+        "U256"
+      ]
+    }
+  ],
+  "constants": [
+    {
+      "name": "P",
+      "value": {
+        "type": "U256",
+        "value": "21888242871839275222246405745257275088696311157297823662689037894645226208583"
+      }
+    }
+  ],
+  "enums": [
+    {
+      "name": "Error",
+      "fields": [
+        {
+          "name": "Infinity",
+          "value": {
+            "type": "U256",
+            "value": "0"
+          }
+        }
+      ]
+    }
+  ]
+}

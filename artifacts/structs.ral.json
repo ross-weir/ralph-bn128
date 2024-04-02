@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Point",
+    "fieldNames": [
+      "x",
+      "y"
+    ],
+    "fieldTypes": [
+      "U256",
+      "U256"
+    ],
+    "isMutable": [
+      true,
+      true
+    ]
+  }
+]
